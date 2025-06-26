@@ -12,6 +12,11 @@ class BaseModel(models.Model):
         verbose_name="Identificador"
     )
 
+    active = models.BooleanField(
+        default=True, 
+        verbose_name="Ativo?"
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Data de criação",

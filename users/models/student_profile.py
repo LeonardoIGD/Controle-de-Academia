@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 from core.models import BaseModel
@@ -44,6 +45,14 @@ class StudentProfile(BaseModel):
     def __str__(self):
         return f"Perfil de {self.user.username}"
     
+    def clean(self):
+        if not self.user.is_student:
+            raise ValidationError("Usuário não está marcado como aluno.")
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
+
     @property
     def bmi(self):
         if self.height and self.weight:

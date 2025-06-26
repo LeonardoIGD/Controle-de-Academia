@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 from core.models import BaseModel
 from .user import User
@@ -42,4 +43,12 @@ class InstructorProfile(BaseModel):
         verbose_name_plural = "Perfis de Instrutores"
     
     def __str__(self):
-        return f"Instrutor {self.user.username}"
+        return f"Instrutor {self.user.username if self.user else 'N/A'}"
+
+    def clean(self):
+        if not self.user.is_instructor:
+            raise ValidationError("Usuário não está marcado como instrutor.")
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
