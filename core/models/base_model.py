@@ -1,7 +1,8 @@
 import uuid
 
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
+
 
 class BaseModel(models.Model):
     id = models.UUIDField(
@@ -22,7 +23,7 @@ class BaseModel(models.Model):
     )
 
     created_by = models.ForeignKey(
-        User, 
+        settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE, 
         blank=True,
         verbose_name="Criando por",
