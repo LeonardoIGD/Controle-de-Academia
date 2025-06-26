@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # libs
     'corsheaders',
     'rest_framework',
+    'drf_spectacular',
     # apps
     'users',
 ]
