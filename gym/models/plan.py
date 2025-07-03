@@ -1,11 +1,25 @@
+"""
+    Model-related imports for Django application.
+
+    Django Components:
+    - models: Django's model framework for database ORM
+    - validators.MinValueValidator: Field validator to ensure minimum values
+
+    Application Models:
+    - BaseModel: Abstract base model from core app (common fields)
+    - InstructorProfile: Instructor profile model from users app
+"""
+
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
 
 from core.models import BaseModel
 from users.models import InstructorProfile
 
 
 class Plan(BaseModel):
+    """ Represents a plan of the gym """
+
     name = models.CharField(
         max_length=100,
         verbose_name="Nome do Plano"
@@ -28,7 +42,7 @@ class Plan(BaseModel):
     )
 
     modality = models.CharField(
-        max_length=100, 
+        max_length=100,
         verbose_name="Modalidade"
     )
 
@@ -48,9 +62,9 @@ class Plan(BaseModel):
     )
 
     class Meta:
+        """ Class that defines the model metadata """
         verbose_name = "Plano"
         verbose_name_plural = "Planos"
 
     def __str__(self):
         return f"{self.name} ({self.duration_months} meses)"
-

@@ -1,8 +1,25 @@
+"""
+    Enrollment model dependencies and imports.
+
+    Database and Models:
+    - django.db.models: Core Django model functionality
+    - core.models.BaseModel: Abstract base model with common fields
+    - users.models: 
+    - StudentProfile: Student information model
+    - InstructorProfile: Instructor information model
+
+    Application Specific:
+    - .plan.Plan: Subscription plan model
+    - .choices.EnrollmentStatus: Status choices for enrollments
+
+    Utilities:
+    - dateutil.relativedelta.relativedelta: For advanced date calculations
+    and manipulations (e.g., adding months to dates)
+"""
+
 from django.db import models
 
-from datetime import timedelta
 from dateutil.relativedelta import relativedelta
-from django.core.exceptions import ValidationError
 
 from core.models import BaseModel
 from users.models import StudentProfile, InstructorProfile
@@ -11,6 +28,7 @@ from .choices import EnrollmentStatus
 
 
 class Enrollment(BaseModel):
+    """ Represents a student's enrollment in a program or course. """
     student = models.ForeignKey(
         StudentProfile,
         on_delete=models.CASCADE,
@@ -30,7 +48,7 @@ class Enrollment(BaseModel):
     )
 
     end_date = models.DateField(
-        verbose_name="Data de Término", 
+        verbose_name="Data de Término",
         blank=True
     )
 
@@ -42,10 +60,10 @@ class Enrollment(BaseModel):
     )
 
     notes = models.TextField(
-        blank=True, 
+        blank=True,
         verbose_name="Observações"
     )
-    
+
     assigned_by = models.ForeignKey(
         InstructorProfile,
         on_delete=models.SET_NULL,
@@ -56,6 +74,7 @@ class Enrollment(BaseModel):
     )
 
     class Meta:
+        """ Class that defines the model metadata """
         verbose_name = "Matrícula"
         verbose_name_plural = "Matrículas"
         constraints = [
@@ -67,15 +86,15 @@ class Enrollment(BaseModel):
         ]
 
     def __str__(self):
-        return f"{self.student.user.username} - {self.plan.name}"
+        return f"{self.student.user.username} - {self.plan.name}" # pylint: disable=no-member
 
     def clean(self):
         if self.start_date and self.plan and not self.end_date:
-            self.end_date = self.start_date + relativedelta(months=self.plan.duration_months)
+            self.end_date = self.start_date + relativedelta(months=self.plan.duration_months) # pylint: disable=no-member
 
     def save(self, *args, **kwargs):
         self.full_clean()
         if not self.end_date:
-            self.end_date = self.start_date + relativedelta(months=self.plan.duration_months)
+            self.end_date = self.start_date + relativedelta(months=self.plan.duration_months) # pylint: disable=no-member
 
         super().save(*args, **kwargs)
