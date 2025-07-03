@@ -1,3 +1,4 @@
+""" Module that provides functions for UUID generation """
 import uuid
 
 from django.db import models
@@ -5,15 +6,16 @@ from django.conf import settings
 
 
 class BaseModel(models.Model):
+    """ Base system model """
     id = models.UUIDField(
-        primary_key=True, 
-        default=uuid.uuid4, 
+        primary_key=True,
+        default=uuid.uuid4,
         editable=False,
         verbose_name="Identificador"
     )
 
     active = models.BooleanField(
-        default=True, 
+        default=True,
         verbose_name="Ativo?"
     )
 
@@ -28,11 +30,12 @@ class BaseModel(models.Model):
     )
 
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        on_delete=models.CASCADE, 
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
         blank=True,
         verbose_name="Criando por",
     )
 
     class Meta:
+        """ Class that defines the model metadata """
         abstract = True
