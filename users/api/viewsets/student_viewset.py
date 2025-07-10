@@ -40,7 +40,8 @@ class StudentProfileViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == 'list':
             return StudentProfileReadSerializer
-        elif self.action == 'retrieve':
+
+        if self.action == 'retrieve':
             return StudentProfileReadDetailSerializer
 
         return StudentProfileWriteSerializer

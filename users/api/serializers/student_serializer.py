@@ -12,7 +12,7 @@ from rest_framework import serializers
 
 from users.models import StudentProfile
 
-class StudentProfileReadSerializer(serializers.ModelSerializer):
+class StudentProfileReadSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Read Serializer for StudentProfile Model """
 
     bmi = serializers.FloatField(read_only=True)
@@ -23,7 +23,7 @@ class StudentProfileReadSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'birth_date', 'bmi']
         read_only_fields = ['id', 'user', 'birth_date', 'bmi']
 
-class StudentProfileReadDetailSerializer(serializers.ModelSerializer):
+class StudentProfileReadDetailSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Detailed reading serializer for StudentProfile model """
     bmi = serializers.FloatField(read_only=True)
 
@@ -47,7 +47,7 @@ class StudentProfileReadDetailSerializer(serializers.ModelSerializer):
             'created_at', 'updated_at'
         ]
 
-class StudentProfileWriteSerializer(serializers.ModelSerializer):
+class StudentProfileWriteSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Writing serializer for StudentProfile model """
     class Meta:
         """ Class that defines the serializer metadata """

@@ -3,6 +3,6 @@ from .enrollment_admin import EnrollmentAdmin
 
 
 __all__ = [
-    PlanAdmin,
-    EnrollmentAdmin,
+    'PlanAdmin',
+    'EnrollmentAdmin',
 ]

@@ -13,7 +13,7 @@ from rest_framework import serializers
 from users.models import InstructorProfile
 
 
-class InstructorProfileReadSerializer(serializers.ModelSerializer):
+class InstructorProfileReadSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Read Serializer for InstructorProfile Model """
     class Meta:
         """ Class that defines the serializer metadata """
@@ -23,7 +23,7 @@ class InstructorProfileReadSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'user', 'specialization', 'experience_years', 'is_available']
 
-class InstructorProfileReadDetailSerializer(serializers.ModelSerializer):
+class InstructorProfileReadDetailSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Detailed reading serializer for InstructorProfile model """
     class Meta:
         """ Class that defines the serializer metadata """
@@ -43,7 +43,7 @@ class InstructorProfileReadDetailSerializer(serializers.ModelSerializer):
             'created_at', 'updated_at'
         ]
 
-class InstructorProfileWriteSerializer(serializers.ModelSerializer):
+class InstructorProfileWriteSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Writing serializer for InstructorProfile model """
     class Meta:
         """ Class that defines the serializer metadata """
