@@ -14,16 +14,13 @@
     * PlanWriteSerializer: Serializer for write operations
 """
 
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from drf_spectacular.utils import extend_schema
 
+from gym.api.serializers import (PlanReadDetailSerializer, PlanReadSerializer,
+                                 PlanWriteSerializer)
 from gym.models import Plan
-from gym.api.serializers import (
-    PlanReadSerializer,
-    PlanReadDetailSerializer,
-    PlanWriteSerializer,
-)
 
 
 @extend_schema(tags=['API Plan Management'])

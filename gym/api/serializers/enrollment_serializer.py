@@ -12,6 +12,7 @@ from rest_framework import serializers
 
 from gym.models import Enrollment
 
+
 class EnrollmentReadSerializer(serializers.ModelSerializer):
     """ Read Serializer for Enrollment Model """
     student = serializers.StringRelatedField()

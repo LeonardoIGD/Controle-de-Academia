@@ -4,13 +4,8 @@
 """
 
 # Serializers
-from .enrollment_serializer import (
-    EnrollmentReadSerializer,
-    EnrollmentReadDetailSerializer,
-    EnrollmentWriteSerializer,
-)
-from .plan_serializer import (
-    PlanReadSerializer,
-    PlanReadDetailSerializer,
-    PlanWriteSerializer,
-)
+from .enrollment_serializer import (EnrollmentReadDetailSerializer,
+                                    EnrollmentReadSerializer,
+                                    EnrollmentWriteSerializer)
+from .plan_serializer import (PlanReadDetailSerializer, PlanReadSerializer,
+                              PlanWriteSerializer)

@@ -11,12 +11,14 @@
     - User: Custom user model (from current module)
 """
 
-from django.db import models
 from django.core.exceptions import ValidationError
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
 
 from core.models import BaseModel
+
 from .user import User
+
 
 class StudentProfile(BaseModel):
     """ Model representing the system's student profiles """

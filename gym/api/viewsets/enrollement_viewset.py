@@ -14,16 +14,14 @@
     * WriteSerializer: Serializer for write operations
 """
 
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from drf_spectacular.utils import extend_schema
 
+from gym.api.serializers import (EnrollmentReadDetailSerializer,
+                                 EnrollmentReadSerializer,
+                                 EnrollmentWriteSerializer)
 from gym.models import Enrollment
-from gym.api.serializers import (
-    EnrollmentReadSerializer,
-    EnrollmentReadDetailSerializer,
-    EnrollmentWriteSerializer,
-)
 
 
 @extend_schema(tags=['API Enrollment Management'])

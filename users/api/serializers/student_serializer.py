@@ -12,6 +12,7 @@ from rest_framework import serializers
 
 from users.models import StudentProfile
 
+
 class StudentProfileReadSerializer(serializers.ModelSerializer): # pylint: disable=too-few-public-methods
     """ Read Serializer for StudentProfile Model """
 

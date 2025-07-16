@@ -7,6 +7,7 @@
 
 from django.db import models
 
+
 class EnrollmentStatus(models.TextChoices):
     """ Defines possible enrollment status options as text choices. """
     ACTIVE = 'active', 'Ativa'

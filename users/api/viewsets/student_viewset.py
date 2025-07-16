@@ -14,16 +14,14 @@
     * WriteSerializer: Serializer for write operations
 """
 
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from drf_spectacular.utils import extend_schema
 
+from users.api.serializers import (StudentProfileReadDetailSerializer,
+                                   StudentProfileReadSerializer,
+                                   StudentProfileWriteSerializer)
 from users.models import StudentProfile
-from users.api.serializers import (
-    StudentProfileReadSerializer,
-    StudentProfileReadDetailSerializer,
-    StudentProfileWriteSerializer,
-)
 
 
 @extend_schema(tags=['API Student Management'])

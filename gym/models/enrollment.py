@@ -17,14 +17,14 @@
     and manipulations (e.g., adding months to dates)
 """
 
+from dateutil.relativedelta import relativedelta
 from django.db import models
 
-from dateutil.relativedelta import relativedelta
-
 from core.models import BaseModel
-from users.models import StudentProfile, InstructorProfile
-from .plan import Plan
+from users.models import InstructorProfile, StudentProfile
+
 from .choices import EnrollmentStatus
+from .plan import Plan
 
 
 class Enrollment(BaseModel):

@@ -10,10 +10,11 @@
     - User: Custom user model (from current module)
 """
 
-from django.db import models
 from django.core.exceptions import ValidationError
+from django.db import models
 
 from core.models import BaseModel
+
 from .user import User
 
 

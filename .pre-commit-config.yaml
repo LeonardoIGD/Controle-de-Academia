@@ -8,11 +8,11 @@ repos:
       - id: check-json  # Valida arquivos JSON
       - id: debug-statements  # Impede commits com print() e pdb.set_trace()
 
-  # # Organização automática dos imports
-  # - repo: https://github.com/PyCQA/isort
-  #   rev: 5.13.2
-  #   hooks:
-  #     - id: isort
+  # Organização automática dos imports
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
 
   # # Formatação automática em black
   # - repo: https://github.com/psf/black
