@@ -29,16 +29,16 @@ class InstructorProfileReadDetailSerializer(serializers.ModelSerializer): # pyli
         """ Class that defines the serializer metadata """
         model = InstructorProfile
         fields = [
-            'id', 'user', 
+            'id', 'user',
             'specialization', 'experience_years', 'certifications',
-            'biography', 
+            'biography',
             'active', 'is_available',
             'created_at', 'updated_at'
         ]
         read_only_fields = [
-            'id', 'user', 
+            'id', 'user',
             'specialization', 'experience_years', 'certifications',
-            'biography', 
+            'biography',
             'active', 'is_available',
             'created_at', 'updated_at'
         ]

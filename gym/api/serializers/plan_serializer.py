@@ -20,10 +20,10 @@ class PlanReadSerializer(serializers.ModelSerializer):
         model = Plan
         fields = ['id', 'name', 'duration_months', 'price', 'modality', 'instructor', 'active']
         read_only_fields = [
-            'id', 
-            'name', 
-            'duration_months', 'price', 
-            'modality', 'instructor', 
+            'id',
+            'name',
+            'duration_months', 'price',
+            'modality', 'instructor',
             'active'
         ]
 
@@ -33,21 +33,21 @@ class PlanReadDetailSerializer(serializers.ModelSerializer):
         """ Class that defines the serializer metadata """
         model = Plan
         fields = [
-            'id', 
-            'name', 'description', 
-            'duration_months', 'price', 
-            'modality', 'max_students', 
-            'instructor', 
-            'active', 
+            'id',
+            'name', 'description',
+            'duration_months', 'price',
+            'modality', 'max_students',
+            'instructor',
+            'active',
             'created_at', 'updated_at'
         ]
         read_only_fields = [
-            'id', 
-            'name', 'description', 
-            'duration_months', 'price', 
-            'modality', 'max_students', 
-            'instructor', 
-            'active', 
+            'id',
+            'name', 'description',
+            'duration_months', 'price',
+            'modality', 'max_students',
+            'instructor',
+            'active',
             'created_at', 'updated_at'
         ]
 

@@ -4,7 +4,7 @@
     Database and Models:
     - django.db.models: Core Django model functionality
     - core.models.BaseModel: Abstract base model with common fields
-    - users.models: 
+    - users.models:
     - StudentProfile: Student information model
     - InstructorProfile: Instructor information model
 

@@ -10,7 +10,7 @@
     - Plan: Model from gym app
     - Plan serializers:
     * PlanReadSerializer: Basic read serializer
-    * PlanReadDetailSerializer: Detailed read serializer 
+    * PlanReadDetailSerializer: Detailed read serializer
     * PlanWriteSerializer: Serializer for write operations
 """
 

@@ -1,5 +1,5 @@
 """
-    This file is part of the gym application, which contains viewsets 
+    This file is part of the gym application, which contains viewsets
     for handling API requests related to gym operations.
 """
 

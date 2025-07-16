@@ -1,5 +1,5 @@
 """
-    This file is part of the gym application, which contains serializers 
+    This file is part of the gym application, which contains serializers
     for handling API requests related to gym operations.
 """
 

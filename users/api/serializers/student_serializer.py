@@ -39,11 +39,11 @@ class StudentProfileReadDetailSerializer(serializers.ModelSerializer): # pylint:
             'created_at', 'updated_at'
         ]
         read_only_fields = [
-            'id', 'user', 
-            'height', 'weight', 
-            'birth_date', 
-            'health_restrictions', 'fitness_goals', 
-            'bmi', 'active', 
+            'id', 'user',
+            'height', 'weight',
+            'birth_date',
+            'health_restrictions', 'fitness_goals',
+            'bmi', 'active',
             'created_at', 'updated_at'
         ]
 

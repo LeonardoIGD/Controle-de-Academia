@@ -1,12 +1,12 @@
 repos:
-  # - repo: https://github.com/pre-commit/pre-commit-hooks
-  #   rev: v4.5.0
-  #   hooks:
-  #     - id: trailing-whitespace  # Remove espaços em branco no final das linhas
-  #     - id: end-of-file-fixer  # Garante uma linha em branco no final dos arquivos
-  #     - id: check-yaml  # Valida arquivos YAML
-  #     - id: check-json  # Valida arquivos JSON
-  #     - id: debug-statements  # Impede commits com print() e pdb.set_trace()
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace  # Remove espaços em branco no final das linhas
+      - id: end-of-file-fixer  # Garante uma linha em branco no final dos arquivos
+      - id: check-yaml  # Valida arquivos YAML
+      - id: check-json  # Valida arquivos JSON
+      - id: debug-statements  # Impede commits com print() e pdb.set_trace()
 
   # # Organização automática dos imports
   # - repo: https://github.com/PyCQA/isort

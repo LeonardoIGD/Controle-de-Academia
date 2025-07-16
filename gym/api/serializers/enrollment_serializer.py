@@ -33,19 +33,19 @@ class EnrollmentReadDetailSerializer(serializers.ModelSerializer):
         """ Class that defines the serializer metadata """
         model = Enrollment
         fields = [
-            'id', 'student', 'plan', 
-            'start_date', 'end_date', 
-            'status', 'active', 
-            'notes', 
-            'assigned_by', 
+            'id', 'student', 'plan',
+            'start_date', 'end_date',
+            'status', 'active',
+            'notes',
+            'assigned_by',
             'created_at', 'updated_at'
         ]
         read_only_fields = [
-            'id', 'student', 'plan', 
-            'start_date', 'end_date', 
-            'status', 'active', 
-            'notes', 
-            'assigned_by', 
+            'id', 'student', 'plan',
+            'start_date', 'end_date',
+            'status', 'active',
+            'notes',
+            'assigned_by',
             'created_at', 'updated_at'
         ]
 

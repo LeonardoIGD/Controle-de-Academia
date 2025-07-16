@@ -10,7 +10,7 @@
     - Enrollment: Model from gym app
     - Enrollment serializers:
     * ReadSerializer: Basic read serializer
-    * ReadDetailSerializer: Detailed read serializer 
+    * ReadDetailSerializer: Detailed read serializer
     * WriteSerializer: Serializer for write operations
 """
 

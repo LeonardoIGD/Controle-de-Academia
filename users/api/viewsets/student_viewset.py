@@ -10,7 +10,7 @@
     - StudentProfile: Model from users app
     - StudentProfile serializers:
     * ReadSerializer: Basic read serializer
-    * ReadDetailSerializer: Detailed read serializer 
+    * ReadDetailSerializer: Detailed read serializer
     * WriteSerializer: Serializer for write operations
 """
 
