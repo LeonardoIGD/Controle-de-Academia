@@ -34,7 +34,7 @@ repos:
         entry: pylint --disable=R0901,R0903
         language: system
         types: [python]
-        files: ^users/(api/(viewsets|serializers)|models)/.*\.py$
+        files: ^(users|gym)/(api/(viewsets|serializers)|models)/.*\.py$
 
   # # Tipagem estática
   # - repo: https://github.com/pre-commit/mirrors-mypy
